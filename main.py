@@ -34,17 +34,21 @@ def download_airnow_data(timestamp):
     output_file = r'C:/Users/kevin/Desktop/GEOG797/CapstoneProject/data-download/sample-download/' + timestamp + ".csv"
     if not os.path.exists(output_file):
         aq_file = requests.get(complete_url)
-        print(aq_file.content)
+        print("HERE")
+        print(complete_url)
+        aq_file_string = aq_file.content.decode('utf-8')
+        print(len(aq_file_string.splitlines()))
         if aq_file.status_code == 404:
             print("File not found: ", output_file)
         else:
             print("Starting", output_file)
-            with open(output_file, 'wb') as file:
+            with open(output_file, 'w') as file:
                 aq_writer = csv.writer(
                     file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-                for line in aq_file.content:  # ! check issue here NEED to pass in a list of strings?
+                for line in aq_file_string.splitlines():  # ! check issue here NEED to pass in a list of strings?
                     aq_writer.writerow(line)
-                # file.write(aq_file.content)
+
+            # file.write(aq_file.content)
             print("Status Code: ", aq_file.status_code)
             print("Finished downloading " + output_file)
     else:
