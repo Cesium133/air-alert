@@ -47,6 +47,8 @@ def download_airnow_data(timestamp):
                 # file.write(aq_file.content)
             print("Status Code: ", aq_file.status_code)
             print("Finished downloading " + output_file)
+    else:
+        print("Already exists -->", output_file)
 
     # TODO: edit csv to delete fields I don't want, data reduction
     # TODO: update postgres db with records.
