@@ -25,6 +25,7 @@ def get_last_48hours():
         date_times_arr.append(date_time.strftime(DATE_TIME_STRING_FORMAT))
 
     for time in date_times_arr:
+        print("downloading for ", time)
         download_airnow_data(time)
 
     delete_older_files(date_times_arr)
@@ -65,10 +66,17 @@ def delete_older_files(date_array):
         filename_array.append(out_file)
 
     existing_files = os.listdir(root_dir)
+    print(existing_files)
+    print(filename_array)
     for existing_file in existing_files:
-        print("Deleting", existing_file)
         if existing_file not in filename_array:
-            os.remove(existing_file)
+            if os.path.exists(root_dir + existing_file):
+                print("Deleting", existing_file)
+                os.remove(root_dir + existing_file)
+            else:
+                print("File doesn't exist: ", existing_file)
+        else:
+            print("This file is needed and already downloaded:", existing_file)
 
 
 if __name__ == "__main__":
