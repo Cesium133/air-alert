@@ -19,8 +19,6 @@ def get_last_48hours():
     now = datetime.now(tz=pytz.utc)
     date_time = now - timedelta(days=2)
     date_times_arr = [date_time.strftime(DATE_TIME_STRING_FORMAT)]
-    # delete files with timestamps older than time
-    delete_older_files(date_times_arr[0])
 
     while date_time < now:
         date_time += timedelta(hours=1)
@@ -28,12 +26,8 @@ def get_last_48hours():
 
     for time in date_times_arr:
         download_airnow_data(time)
-        break
 
-
-def delete_older_files(time):
-    # if there are files that exist in root_dir that are older than time, delete them
-    # use timedelta to see if there are any matching files for time parameter minus timedelta(days=2) AKA two days before the last two days
+    delete_older_files(date_times_arr)
 
 
 def download_airnow_data(timestamp):
@@ -54,7 +48,7 @@ def download_airnow_data(timestamp):
             with open(output_file, 'w') as file:
                 aq_writer = csv.writer(
                     file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-                for line in aq_file_string.splitlines():  # ! check issue here NEED to pass in a list of strings?
+                for line in aq_file_string.splitlines():
                     line_split = line.split(",")
                     aq_writer.writerow([line_split[ind] for ind in col_index])
 
@@ -63,8 +57,18 @@ def download_airnow_data(timestamp):
     else:
         print("Already exists -->", output_file)
 
-    # TODO: edit csv to delete fields I don't want, data reduction
-    # TODO: update postgres db with records.
+
+def delete_older_files(date_array):
+    filename_array = []
+    for time in date_array:
+        out_file = time + ".csv"
+        filename_array.append(out_file)
+
+    existing_files = os.listdir(root_dir)
+    for existing_file in existing_files:
+        print("Deleting", existing_file)
+        if existing_file not in filename_array:
+            os.remove(existing_file)
 
 
 if __name__ == "__main__":
