@@ -30,8 +30,9 @@ def get_last_48hours():
     for time in date_times_arr:
         print("Downloading file for ", time)
         download_airnow_data(time)
+        break
 
-    delete_older_files(date_times_arr)
+    # delete_older_files(date_times_arr)
 
 
 def download_airnow_data(timestamp):
@@ -48,14 +49,14 @@ def download_airnow_data(timestamp):
         else:
             print("Writing", output_file)
             col_index = [0, 1, 2, 4, 5, 6, 9, 10, 11, 14, 15, 16, 17]
-
             with open(output_file, 'w') as file:
                 aq_writer = csv.writer(
-                    file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+                    file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL, skipinitialspace=True)
                 for line in aq_file_string.splitlines():
-                    # ! don't want to do this because other commas exist
                     line_split = line.split(",")
-                    aq_writer.writerow([line_split[ind] for ind in col_index])
+                    aq_writer.writerow([line_split[ind]
+                                        for ind in col_index])
+                    # aq_writer.writerow(line for ind in col_index)
 
             print("Status Code: ", aq_file.status_code)
             print("Finished downloading " + output_file)
