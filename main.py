@@ -7,6 +7,9 @@ import csv
 base_url = "https://s3-us-west-1.amazonaws.com//files.airnowtech.org/airnow/"
 root_dir = r'C:/Users/kevin/Desktop/GEOG797/CapstoneProject/data-download/sample-download/'
 
+#! don't write rows that are not located in US
+#! cannot separate by commas
+
 
 def main():
     get_last_48hours()
@@ -25,7 +28,7 @@ def get_last_48hours():
         date_times_arr.append(date_time.strftime(DATE_TIME_STRING_FORMAT))
 
     for time in date_times_arr:
-        print("downloading for ", time)
+        print("Downloading file for ", time)
         download_airnow_data(time)
 
     delete_older_files(date_times_arr)
@@ -50,11 +53,13 @@ def download_airnow_data(timestamp):
                 aq_writer = csv.writer(
                     file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                 for line in aq_file_string.splitlines():
+                    # ! don't want to do this because other commas exist
                     line_split = line.split(",")
                     aq_writer.writerow([line_split[ind] for ind in col_index])
 
             print("Status Code: ", aq_file.status_code)
             print("Finished downloading " + output_file)
+            # connect to postgres db
     else:
         print("Already exists -->", output_file)
 
@@ -66,8 +71,6 @@ def delete_older_files(date_array):
         filename_array.append(out_file)
 
     existing_files = os.listdir(root_dir)
-    print(existing_files)
-    print(filename_array)
     for existing_file in existing_files:
         if existing_file not in filename_array:
             if os.path.exists(root_dir + existing_file):
