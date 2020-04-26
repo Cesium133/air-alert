@@ -1,3 +1,4 @@
 .vscode/
-sample-download/*
+airquality_csv/*
 db_connect.py
+__pycache__/
