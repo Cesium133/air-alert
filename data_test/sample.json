@@ -1,0 +1,290 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-96.481944, 31.168889, 136.9]
+      },
+      "properties": {
+        "FIELD1": "483951076",
+        "FIELD2": "Franklin Oak Grove",
+        "FIELD3": "Active",
+        "FIELD7": "TX",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": -9999,
+        "FIELD11": -9999,
+        "FIELD12": -9999,
+        "FIELD13": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-105.5453, 40.2778, 2744.7]
+      },
+      "properties": {
+        "FIELD1": "080699991",
+        "FIELD2": "Rocky Mtn NP Collocated",
+        "FIELD3": "Active",
+        "FIELD7": "CO",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": -9999,
+        "FIELD11": -9999,
+        "FIELD12": -9999,
+        "FIELD13": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.34327, 47.808226, 577.4]
+      },
+      "properties": {
+        "FIELD1": "530639995",
+        "FIELD2": "Colbert-Greenbluff",
+        "FIELD3": "Active",
+        "FIELD7": "WA",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": -9999,
+        "FIELD11": -9999,
+        "FIELD12": 27,
+        "FIELD13": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.257652, 47.663963, 611.2]
+      },
+      "properties": {
+        "FIELD1": "530639997",
+        "FIELD2": "Spokane-E Broadway Ave (US)",
+        "FIELD3": "Active",
+        "FIELD7": "WA",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": -9999,
+        "FIELD11": -9999,
+        "FIELD12": 20,
+        "FIELD13": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.084503, 47.660568, 650.3]
+      },
+      "properties": {
+        "FIELD1": "530639996",
+        "FIELD2": "Liberty Lake-E Valeyway (US)",
+        "FIELD3": "Inactive",
+        "FIELD7": "WA",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": -9999,
+        "FIELD11": -9999,
+        "FIELD12": -9999,
+        "FIELD13": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-81.276833, 29.489082, 0.0]
+      },
+      "properties": {
+        "FIELD1": "120350004",
+        "FIELD2": "Flagler County",
+        "FIELD3": "Active",
+        "FIELD7": "FL",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": 29,
+        "FIELD11": -9999,
+        "FIELD12": -9999,
+        "FIELD13": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.746814, 39.371679, 132.7]
+      },
+      "properties": {
+        "FIELD1": "240050009",
+        "FIELD2": "Baltimore County Near Road",
+        "FIELD3": "Active",
+        "FIELD7": "MD",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": -9999,
+        "FIELD11": -9999,
+        "FIELD12": -9999,
+        "FIELD13": 15
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-74.156898, 40.631699, 0.0]
+      },
+      "properties": {
+        "FIELD1": "360850114",
+        "FIELD2": "Staten Island",
+        "FIELD3": "Inactive",
+        "FIELD7": "NY",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": -9999,
+        "FIELD11": -9999,
+        "FIELD12": -9999,
+        "FIELD13": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-119.218483, 38.257656, 0.0]
+      },
+      "properties": {
+        "FIELD1": "MMGBU1001",
+        "FIELD2": "GBUAPCD EBAM @ Bridgeport",
+        "FIELD3": "Inactive",
+        "FIELD7": "MM",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": -9999,
+        "FIELD11": -9999,
+        "FIELD12": -9999,
+        "FIELD13": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-74.1994, 40.5802, 0.0]
+      },
+      "properties": {
+        "FIELD1": "360850111",
+        "FIELD2": "Fresh Kills",
+        "FIELD3": "Active",
+        "FIELD7": "NY",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": 8,
+        "FIELD11": -9999,
+        "FIELD12": 23,
+        "FIELD13": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-84.538375, 39.146025, 0.0]
+      },
+      "properties": {
+        "FIELD1": "390610048",
+        "FIELD2": "Cincinnati Near Road",
+        "FIELD3": "Active",
+        "FIELD7": "OH",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": -9999,
+        "FIELD11": -9999,
+        "FIELD12": 78,
+        "FIELD13": 22
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-118.475897, 37.817763, 0.0]
+      },
+      "properties": {
+        "FIELD1": "MMGBU1000",
+        "FIELD2": "GBUAPCD EBAM @ Benton",
+        "FIELD3": "Inactive",
+        "FIELD7": "MM",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": -9999,
+        "FIELD11": -9999,
+        "FIELD12": -9999,
+        "FIELD13": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-106.306107, 40.882198, 2418.3]
+      },
+      "properties": {
+        "FIELD1": "080570003",
+        "FIELD2": "Walden, CO",
+        "FIELD3": "Inactive",
+        "FIELD7": "CO",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": -9999,
+        "FIELD11": -9999,
+        "FIELD12": -9999,
+        "FIELD13": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.277496, 48.3456, 630.1]
+      },
+      "properties": {
+        "FIELD1": "530510007",
+        "FIELD2": "Usk-Kalispel Tribe",
+        "FIELD3": "Inactive",
+        "FIELD7": "WA",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": -9999,
+        "FIELD11": -9999,
+        "FIELD12": -9999,
+        "FIELD13": -9999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-84.50404, 39.12886, 0.0]
+      },
+      "properties": {
+        "FIELD1": "390610040",
+        "FIELD2": "Taft",
+        "FIELD3": "Active",
+        "FIELD7": "OH",
+        "FIELD8": "04/25/20",
+        "FIELD9": "04:00",
+        "FIELD10": 20,
+        "FIELD11": 28,
+        "FIELD12": 55,
+        "FIELD13": 14
+      }
+    }
+  ]
+}

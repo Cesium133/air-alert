@@ -55,7 +55,7 @@ def download_airnow_data(timestamp):
                     file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL, skipinitialspace=True)
                 for line in aq_file_string.splitlines():
                     line_split = line.split("\",\"")
-                    if (line_split[8] == "US"):
+                    if (line_split[8] == "CountryCode" or line_split[8] == "US"):
                         str_val_list = [line_split[0], line_split[1], line_split[2],
                                         line_split[9], line_split[10], line_split[11]]
                         num_val_list = [line_split[4], line_split[5], line_split[6],
@@ -84,6 +84,7 @@ def download_airnow_data(timestamp):
 def read_csv(csv_file):
     with open(csv_file, newline='') as csvfile:
         aq_reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+        next(aq_reader)
         aq_reader_edited = []
         for row in aq_reader:
             if len(row) > 0:
