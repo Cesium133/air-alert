@@ -9,9 +9,6 @@ import db_connect
 base_url = "https://s3-us-west-1.amazonaws.com//files.airnowtech.org/airnow/"
 root_dir = r'C:/Users/kevin/Desktop/GEOG797/CapstoneProject/main/data_processing/airquality_csv/'
 
-#! dont add empty rows to db
-#! dont add double quote character in every row's first element
-
 
 def main():
     get_last_48hours()
@@ -56,22 +53,23 @@ def download_airnow_data(timestamp):
                 for line in aq_file_string.splitlines():
                     line_split = line.split("\",\"")
                     if (line_split[8] == "CountryCode" or line_split[8] == "US"):
-                        str_val_list = [line_split[0], line_split[1], line_split[2],
-                                        line_split[9], line_split[10], line_split[11]]
-                        num_val_list = [line_split[4], line_split[5], line_split[6],
-                                        line_split[14], line_split[15], line_split[16], line_split[17]]
+                        if (line_split[2] == "Active"):
+                            str_val_list = [line_split[0], line_split[1], line_split[2],
+                                            line_split[9], line_split[10], line_split[11]]
+                            num_val_list = [line_split[4], line_split[5], line_split[6],
+                                            line_split[14], line_split[15], line_split[16], line_split[17]]
 
-                        str_val_list[0] = str_val_list[0][1:]
-                        for i in range(len(num_val_list)):
-                            if num_val_list[i] == '':
-                                num_val_list[i] = '-9999'
+                            str_val_list[0] = str_val_list[0][1:]
+                            for i in range(len(num_val_list)):
+                                if num_val_list[i] == '':
+                                    num_val_list[i] = '-9999'
 
-                        final_list = [str_val_list[0], str_val_list[1], str_val_list[2], num_val_list[0],
-                                      num_val_list[1], num_val_list[2], str_val_list[3], str_val_list[4],
-                                      str_val_list[5], num_val_list[3], num_val_list[4], num_val_list[5],
-                                      num_val_list[6]]
+                            final_list = [str_val_list[0], str_val_list[1], str_val_list[2], num_val_list[0],
+                                          num_val_list[1], num_val_list[2], str_val_list[3], str_val_list[4],
+                                          str_val_list[5], num_val_list[3], num_val_list[4], num_val_list[5],
+                                          num_val_list[6]]
 
-                        aq_writer.writerow(final_list)
+                            aq_writer.writerow(final_list)
 
             print("Status Code: ", aq_file.status_code)
             print("Finished writing " + output_file)
@@ -84,7 +82,7 @@ def download_airnow_data(timestamp):
 def read_csv(csv_file):
     with open(csv_file, newline='') as csvfile:
         aq_reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        next(aq_reader)
+        # next(aq_reader)
         aq_reader_edited = []
         for row in aq_reader:
             if len(row) > 0:
