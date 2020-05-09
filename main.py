@@ -7,7 +7,8 @@ import csv
 import db_connect
 
 base_url = "https://s3-us-west-1.amazonaws.com//files.airnowtech.org/airnow/"
-root_dir = r'C:/Users/kevin/Desktop/GEOG797/CapstoneProject/main/data_processing/airquality_csv/'
+# root_dir = r'C:/Users/kevin/Desktop/GEOG797/CapstoneProject/main/data_processing/airquality_csv/'
+root_dir = r'C:/Users/Administrator/Desktop/capstone/air-alert-data-download/airquality_csv/'
 
 
 def main():
